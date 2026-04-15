@@ -1,4 +1,39 @@
 // ===========================
+// Theme Toggle Functionality
+// ===========================
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const root = document.documentElement;
+
+// 读取保存的主题（默认深色）
+let currentTheme = localStorage.getItem('theme') || 'dark';
+root.setAttribute('data-theme', currentTheme);
+updateThemeIcon();
+
+// 切换事件
+themeToggle.addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('theme', currentTheme);
+    updateThemeIcon();
+    
+    // 添加点击动画
+    themeToggle.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+        themeToggle.style.transform = '';
+    }, 150);
+});
+
+// 更新图标
+function updateThemeIcon() {
+    if (currentTheme === 'dark') {
+        themeIcon.className = 'fas fa-sun';
+    } else {
+        themeIcon.className = 'fas fa-moon';
+    }
+}
+
+// ===========================
 // Navigation Scroll Effect
 // ===========================
 window.addEventListener('scroll', () => {
