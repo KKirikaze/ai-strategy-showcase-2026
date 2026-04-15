@@ -155,14 +155,22 @@ nav {
     width: 100%;
     z-index: 1000;
     padding: 1rem 5%;
-    background: rgba(2, 6, 23, 0.7);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
     transition: var(--transition);
 }
 
+:root[data-theme="dark"] nav {
+    background: rgba(2, 6, 23, 0.7);
+}
+
 nav.scrolled {
     padding: 0.75rem 5%;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+:root[data-theme="dark"] nav.scrolled {
     background: rgba(2, 6, 23, 0.9);
 }
 
@@ -195,10 +203,8 @@ nav.scrolled {
 }
 
 .logo-text {
-    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-main);
+    font-weight: 800;
 }
 
 .nav-links {
@@ -357,10 +363,7 @@ nav.scrolled {
 }
 
 .hero-title .gradient-text {
-    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 50%, var(--primary-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-main);
 }
 
 .hero-title .highlight {
@@ -439,10 +442,7 @@ nav.scrolled {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary);
 }
 
 .stat-label {
@@ -481,10 +481,7 @@ nav.scrolled {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-main);
 }
 
 .section-subtitle {
@@ -625,10 +622,7 @@ footer {
 .footer-logo {
     font-size: 1.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary);
     margin-bottom: 1rem;
 }
 
